@@ -1,0 +1,140 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Untitled Document</title>
+<script src="jquery1.9.1.js"></script>
+<script src="jquery.rss"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+
+$('#one').click( function(){
+ jQuery(function($) {
+       document.getElementById('list').innerHTML = $("#list").rss("http://www.bbc.co.uk/news/uk/rss.xml", {
+          limit: 5,
+          effect: 'slideFastSynced'
+        })
+      })
+})
+
+
+$('#two').click( function(){
+ jQuery(function($) {
+       document.getElementById('list').innerHTML = $("#list").rss("http://www.bbc.co.uk/news/world/africa/rss.xml", {
+          limit: 5,
+          effect: 'slideFastSynced'
+        })
+      })
+})
+
+
+$('#three').click( function(){
+ jQuery(function($) {
+        document.getElementById('list').innerHTML = $("#list").rss("http://www.bbc.co.uk/news/world/asia/rss.xml", {
+          limit: 5,
+          effect: 'slideFastSynced'
+        })
+      })
+})
+
+
+$('#four').click( function(){
+ jQuery(function($) {
+    document.getElementById('list').innerHTML =    $("#list").rss("http://www.bbc.co.uk/news/world/europe/rss.xml", {
+          limit: 5,
+          effect: 'slideFastSynced'
+        })
+      })
+})
+
+$('#five').click( function(){
+ jQuery(function($) {
+       document.getElementById('list').innerHTML = $("#list").rss("http://www.bbc.co.uk/news/world/us_and_canada/rss.xml", {
+          limit: 5,
+          effect: 'slideFastSynced'
+        })
+      })
+})
+
+
+
+});
+	
+</script>
+
+<style type="text/css">
+#sub-button{
+display:none;
+}
+.uk-button{
+	background: none repeat scroll 0 0 rgba(0, 0, 0, 0);
+    border: 1px solid #7D7D7D;
+    float: left;
+	margin: 5px 0;
+
+}
+.africa-button{
+	float:left;
+	clear:both;
+	background: none repeat scroll 0 0 rgba(0, 0, 0, 0);
+    border: 1px solid #7D7D7D;
+	margin: 5px 0;
+}
+.asia-button{
+	float:left;
+	clear:both;
+	background: none repeat scroll 0 0 rgba(0, 0, 0, 0);
+    border: 1px solid #7D7D7D;
+	margin: 5px 0;
+}
+.europe-button{
+	float:left;
+	clear:both;
+	background: none repeat scroll 0 0 rgba(0, 0, 0, 0);
+    border: 1px solid #7D7D7D;
+	margin: 5px 0;
+}
+</style>
+
+<script type="text/javascript">
+	function showContent(){	
+	var e  = document.getElementById('sub-button');
+	if(e.style.display == 'block')
+          e.style.display = 'none';
+       else
+          e.style.display = 'block';
+	
+	/*document.getElementById("sub-button").style.visibility="visible";
+	return	document.getElementById("sub-button").style.visibility;*/
+		}
+		
+		
+	function hideContent(){	
+	var e  = document.getElementById('sub-button');
+	if(e.style.display == 'block')
+          e.style.display = 'none';
+       else
+          e.style.display = 'block';
+	
+	/*document.getElementById("sub-button").style.visibility="visible";
+	return	document.getElementById("sub-button").style.visibility;*/
+		}	
+	
+	
+</script>
+</head>
+
+<body>
+<input type="button" name="one" value="Region"  id="region" onclick="showContent();"/>
+<div id="sub-button">
+<input id="one" type="button" name="" value="UK" class="uk-button" onclick="hideContent()"  />
+<input id="two" type="button" name="" value="Africa" class="africa-button"  onclick="hideContent()"/>
+<input id="three" type="button" name="" value="Asia" class="asia-button" onclick="hideContent()" />
+<input id="four" type="button" name="" value="Europe" class="europe-button" onclick="hideContent()"/>
+</div>
+
+<div id="list"> <div></div> </div>
+
+
+</body>
+</html>
